@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diagnóstico Médico Inteligente</title>
+
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Tu archivo CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fa-solid fa-heart-pulse"></i> Diagnóstico Médico</h1>
+    <p>Selecciona hasta 7 síntomas para obtener un diagnóstico basado en IA.</p>
+
+    <form id="diagnostico-form">
+      <fieldset>
+        <legend>Síntomas disponibles</legend>
+        <div id="sintomas-lista" class="checkbox-grid"></div>
+      </fieldset>
+      <p><small>Máximo 7 síntomas.</small></p>
+      <button type="submit">
+        <i class="fa-solid fa-paper-plane"></i> Enviar
+      </button>
+      <button type="button" id="btn-limpiar">
+        <i class="fa-solid fa-broom"></i> Limpiar selección
+      </button>
+    </form>
+
+    <div id="resultado" class="resultado oculto">
+      <h2><i class="fa-solid fa-list-check"></i> Resultado:</h2>
+      <p><strong>Diagnóstico:</strong> <span id="diagnostico"></span></p>
+      <p><strong>Probabilidad:</strong> <span id="probabilidad"></span>%</p>
+      <p><strong>Recomendación:</strong> <span id="recomendacion"></span></p>
+      <p><strong>Síntomas seleccionados:</strong> <span id="sintomas-seleccionados"></span></p>
+    </div>
+
+    <div id="error" class="error oculto">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span id="mensaje-error"></span>
+    </div>
+  </div>
+
+  <!-- Contenedor para toasts -->
+  <div id="toast-container"></div>
+
+  <!-- Tu script -->
+  <script src="main.js"></script>
+</body>
+</html>
